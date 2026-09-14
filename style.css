@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 10px;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+header, header h1 {
+    font-family: 'Permanent Marker', cursive;
+    font-weight: normal;
+    font-style: normal;
+    text-align: center;
+    color: #7b8574;
+    font-size: clamp(1.8rem, 5vw, 2.5rem); /* Chhoti screen par font auto-scale hoga */
+    margin-bottom: 10px;
+}
+
+/* Fluid Responsive Container */
+#calc-box {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.4);
+    height: auto;                     /* Fixed 65vh hatakar auto */
+    width: 100%;
+    max-width: 420px;                /* Desktop par 420px, mobile par screen fit */
+    padding: 16px;
+    box-shadow: 0 15px 35px rgba(100, 115, 130, 0.15);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#display {
+    background-color: #f7f9f7;
+    color: #4a5d52;
+    border: 1.5px solid #dce5dc;
+    border-radius: 12px;
+    font-size: clamp(22px, 4vw, 28px);
+    font-weight: 600;
+    height: 70px;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 16px;
+    outline: none;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+    text-align: right;
+}
+
+.keys {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 8px;
+    width: 100%;
+}
+
+#btnsec {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+#operators {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+}
+
+.keys button {
+    width: 100%;          
+    height: 52px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-family: poppins, sans-serif;
+    font-weight: bold;
+    font-size: clamp(16px, 3.5vw, 20px);
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+.keys button:active {
+    transform: scale(0.96);
+}
+
+#clrbtn {
+    grid-column: span 2;
+    background-color: #f3be9e;
+    color: #ffffff;
+    box-shadow: 0 2px 1px #d99f7d;
+}
+
+#dltbtn {
+    background-color: #f3be9e;
+    color: #ffffff;
+    box-shadow: 0 2px 1px #d99f7d;
+}
+
+.number {
+    background-color: #ffffff;
+    color: #556052;
+    box-shadow: 0 3px 0 #e4e7e4;
+}
+
+.operator {
+    background-color: #ffffff;
+    color: #4a5048;
+    box-shadow: 0 2px 1px #dce5dc;
+}
+
+.equal {
+    background-color: #f3be9e;
+    color: #ffffff;
+    box-shadow: 0 2px 1px #d99f7d;
+}
